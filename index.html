@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERN Stack Developer Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Three.js Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">TAOSHIFLEX</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-toggle" id="mobileToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>
+            GAZI <br />
+            TAOSHIF
+          </h1>
+          <h2>MERN Stack Developer</h2>
+          <p>
+            Building scalable & seamless webapp using MERN with modern,
+            efficient & maintainable solutions.
+          </p>
+          <div class="hero-buttons">
+            <a href="/public/resume.pdf" class="btn btn-primary" id="resumeBtn"
+              >Download Resume</a
+            >
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+          <div class="social-links">
+            <a
+              href="https://github.com/Taoshif1"
+              target="_blank"
+              class="social-btn bg-gray-800"
+            >
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/taoshif1/"
+              target="_blank"
+              class="social-btn bg-blue-700"
+            >
+              <i class="fab fa-linkedin-in fa-lg"></i>
+            </a>
+            <a
+              href="https://wa.me/8801760972307"
+              target="_blank"
+              class="social-btn bg-green-500"
+            >
+              <i class="fab fa-whatsapp fa-lg"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/TaoshifG/"
+              target="_blank"
+              class="social-btn bg-blue-800"
+            >
+              <i class="fab fa-facebook-f fa-lg"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="../images/profileimg.png"
+            alt="Profile"
+            class="profile-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Hello! I'm Gazi Taoshif, a passionate MERN Stack Developer &
+            aspiring entrepreneur from Bangladesh. My coding journey started 2
+            years ago & since then, I’ve been fascinated by the power of turning
+            ideas into real, impactful solutions.
+          </p>
+          <p>
+            I specialize in building full-stack applications using MongoDB,
+            Express.js, React & Node.js, creating seamless user experiences and
+            tackling complex problems with smart solutions.
+          </p>
+          <p>
+            Outside of coding, I enjoy playing cricket, exploring new
+            technologies, sketching digital art & continuously leveling up my
+            skills in tech, business & personal branding.
+          </p>
+          <p>
+            My goal is to build projects that create value, collaborate with
+            talented individuals & shape a future where technology drives
+            meaningful impact. Founder of Taoshiflex Venture 👨‍💼✨
+          </p>
+        </div>
+
+        <div class="about-visual">
+          <img
+            src="../images/banner3-min.png"
+            alt="Gazi Taoshif"
+            class="about-image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3 class="skill-category">Frontend</h3>
+          <div class="skill-item">
+            <div class="skill-name"><span>React.js</span><span>90%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>JavaScript</span><span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>HTML/CSS</span><span>100%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="100"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Tailwind CSS</span><span>100%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3 class="skill-category">Backend</h3>
+          <div class="skill-item">
+            <div class="skill-name"><span>Node.js</span><span>85%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="85"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Express.js</span><span>82%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="82"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>MongoDB</span><span>80%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="80"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>REST APIs</span><span>87%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="87"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3 class="skill-category">Tools & Others</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Git & GitHub</span><span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>GSAP</span><span>75%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="75"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Three.js</span><span>70%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="70"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Framer Motion</span><span>78%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="78"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="education-timeline">
+        <div class="education-item">
+          <div class="education-year">2023 - 2027</div>
+          <h3 class="education-title">
+            Bachelor of Science in Computer Science & Engineering
+          </h3>
+          <p>East West University</p>
+          <p>
+            Specialized in Web Technologies, Database Management & Software
+            Engineering. Completed various projects involving full-stack
+            development.
+          </p>
+        </div>
+        <div class="education-item">
+          <div class="education-year">2020 - 2023</div>
+          <h3 class="education-title">Higher Secondary Certificate (HSC)</h3>
+          <p>Birshreshtha Noor Mohammed Public College<br />GPA: 5.0/5.0</p>
+          <p>
+            Focused on Mathematics, Physics & Chemistry. Developed strong
+            basic analytical & problem-solving skills.
+          </p>
+        </div>
+        <div class="education-item">
+          <div class="education-year">2010 - 2020</div>
+          <h3 class="education-title">Secondary School Certificate (SSC)</h3>
+          <p>Ideal School & College<br />GPA: 5.0/5.0</p>
+          <p>
+            Developed a strong foundation in Mathematics, Physics & Chemistry while cultivating curiosity, discipline & a problem-solving mindset that sparked my interest in technology.
+          </p>
+        </div>
+      </div>
+    </section>
+
+   <!-- Projects Section -->
+<section id="projects">
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="./images/hackathon1.png" alt="Project 1">
+      <div class="project-content">
+        <h3 class="project-title">
+          <a href="https://6845b150af2a94000869d2b3--startling-pavlova-74c5c3.netlify.app/" target="_blank">
+            HACKATHON: From Chains To Freedom
+          </a>
+        </h3>
+        <p class="project-desc">Hackathon project focusing on innovative blockchain-based solutions.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="./images/web1.jpeg" alt="Project 2">
+      <div class="project-content">
+        <h3 class="project-title">
+          <a href="https://github.com/Taoshif1/E-commerce-website-24" target="_blank">
+            E-commerce Website 24
+          </a>
+        </h3>
+        <p class="project-desc">Full-featured online shopping platform with cart and admin management.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="./images/game.png" alt="Project 3">
+      <div class="project-content">
+        <h3 class="project-title">
+          <a href="https://github.com/Taoshif1/java-flappy-bird-game" target="_blank">
+            Flappy Bird Game in Java
+          </a>
+        </h3>
+        <p class="project-desc">Java-based recreation of the classic Flappy Bird game.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="./images/web2.png" alt="Project 4">
+      <div class="project-content">
+        <h3 class="project-title">
+          <a href="https://github.com/Taoshif1/login-system-in-php" target="_blank">
+            Login System in PHP
+          </a>
+        </h3>
+        <p class="project-desc">Secure login and registration system built using PHP & MySQL.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="./images/web3.png" alt="Project 5">
+      <div class="project-content">
+        <h3 class="project-title">
+          <a href="https://github.com/Taoshif1/Internet-Management-System-in-Java" target="_blank">
+            Internet Management System in Java
+          </a>
+        </h3>
+        <p class="project-desc">Java-based project managing user connections and data tracking.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="./images/web4.png" alt="Project 6">
+      <div class="project-content">
+        <h3 class="project-title">
+          <a href="https://taoshif1.github.io/AI-Portfolio/" target="_blank">
+            Previous Portfolio
+          </a>
+        </h3>
+        <p class="project-desc">My earlier portfolio showcasing web development projects.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="./images/web5.png" alt="Project 7">
+      <div class="project-content">
+        <h3 class="project-title">
+          <a href="https://github.com/Taoshif1" target="_blank">
+            More Projects
+          </a>
+        </h3>
+        <p class="project-desc">Explore more of my coding projects and experiments on GitHub.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>taoshif2@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p>+880 1760972307</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Location</h4>
+              <p>Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" required placeholder="Your Name" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" required placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea required placeholder="Your message here..."></textarea>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
