@@ -4,9 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MERN Stack Developer Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js (Latest) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollSmoother.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- SplitType for Text Animation -->
+    <script src="https://unpkg.com/split-type"></script>
     <!-- Font Awesome CDN -->
     <link
       rel="stylesheet"
@@ -23,12 +32,12 @@
       <div class="nav-container">
         <div class="logo">TAOSHIFLEX</div>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" class="magnetic-link">Home</a></li>
+          <li><a href="#about" class="magnetic-link">About</a></li>
+          <li><a href="#skills" class="magnetic-link">Skills</a></li>
+          <li><a href="#education" class="magnetic-link">Education</a></li>
+          <li><a href="#projects" class="magnetic-link">Projects</a></li>
+          <li><a href="#contact" class="magnetic-link">Contact</a></li>
         </ul>
         <div class="mobile-toggle" id="mobileToggle">
           <span></span>
@@ -42,47 +51,47 @@
     <section class="hero" id="home">
       <div class="hero-content">
         <div class="hero-text">
-          <h1>
-            GAZI <br />
-            TAOSHIF
+          <h1 class="hero-title">
+            <span class="line">GAZI</span>
+            <span class="line">TAOSHIF</span>
           </h1>
-          <h2>MERN Stack Developer</h2>
+          <h2 class="hero-subtitle">MERN Stack Developer</h2>
           <p>
             Building scalable & seamless webapp using MERN with modern,
             efficient & maintainable solutions.
           </p>
           <div class="hero-buttons">
-            <a href="/public/resume.pdf" class="btn btn-primary" id="resumeBtn"
+            <a href="/public/resume.pdf" class="btn btn-primary magnetic-btn" id="resumeBtn"
               >Download Resume</a
             >
-            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            <a href="#contact" class="btn btn-secondary magnetic-btn">Get In Touch</a>
           </div>
           <div class="social-links">
             <a
               href="https://github.com/Taoshif1"
               target="_blank"
-              class="social-btn bg-gray-800"
+              class="social-btn bg-gray-800 magnetic-btn"
             >
               <i class="fab fa-github fa-lg"></i>
             </a>
             <a
               href="https://www.linkedin.com/in/taoshif1/"
               target="_blank"
-              class="social-btn bg-blue-700"
+              class="social-btn bg-blue-700 magnetic-btn"
             >
               <i class="fab fa-linkedin-in fa-lg"></i>
             </a>
             <a
               href="https://wa.me/8801760972307"
               target="_blank"
-              class="social-btn bg-green-500"
+              class="social-btn bg-green-500 magnetic-btn"
             >
               <i class="fab fa-whatsapp fa-lg"></i>
             </a>
             <a
               href="https://www.facebook.com/TaoshifG/"
               target="_blank"
-              class="social-btn bg-blue-800"
+              class="social-btn bg-blue-800 magnetic-btn"
             >
               <i class="fab fa-facebook-f fa-lg"></i>
             </a>
@@ -144,29 +153,61 @@
         <div class="skill-card">
           <h3 class="skill-category">Frontend</h3>
           <div class="skill-item">
+            <div class="skill-name"><span>HTML</span><span>100%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="100"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>CSS</span><span>100%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="100"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Bootstrap 5</span><span>95%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="95"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>JavaScript</span><span>90%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>JSON</span><span>95%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="95"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>jQuery</span><span>85%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="85"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>SASS</span><span>90%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>TypeScript</span><span>80%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="80"></div>
+            </div>
+          </div>
+          <div class="skill-item">
             <div class="skill-name"><span>React.js</span><span>90%</span></div>
             <div class="skill-bar">
               <div class="skill-progress" data-progress="90"></div>
             </div>
           </div>
           <div class="skill-item">
-            <div class="skill-name">
-              <span>JavaScript</span><span>90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="90"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name"><span>HTML/CSS</span><span>100%</span></div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-progress="100"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">
-              <span>Tailwind CSS</span><span>100%</span>
-            </div>
+            <div class="skill-name"><span>Tailwind CSS</span><span>100%</span></div>
             <div class="skill-bar">
               <div class="skill-progress" data-progress="100"></div>
             </div>
@@ -182,9 +223,7 @@
             </div>
           </div>
           <div class="skill-item">
-            <div class="skill-name">
-              <span>Express.js</span><span>82%</span>
-            </div>
+            <div class="skill-name"><span>Express.js</span><span>82%</span></div>
             <div class="skill-bar">
               <div class="skill-progress" data-progress="82"></div>
             </div>
@@ -196,9 +235,43 @@
             </div>
           </div>
           <div class="skill-item">
-            <div class="skill-name"><span>REST APIs</span><span>87%</span></div>
+            <div class="skill-name"><span>REST API</span><span>87%</span></div>
             <div class="skill-bar">
               <div class="skill-progress" data-progress="87"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>PHP</span><span>75%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="75"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3 class="skill-category">Programming Languages</h3>
+          <div class="skill-item">
+            <div class="skill-name"><span>C</span><span>75%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="75"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>C++</span><span>75%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="75"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Java</span><span>80%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="80"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Python</span><span>70%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="70"></div>
             </div>
           </div>
         </div>
@@ -206,11 +279,15 @@
         <div class="skill-card">
           <h3 class="skill-category">Tools & Others</h3>
           <div class="skill-item">
-            <div class="skill-name">
-              <span>Git & GitHub</span><span>90%</span>
-            </div>
+            <div class="skill-name"><span>Git & GitHub</span><span>90%</span></div>
             <div class="skill-bar">
               <div class="skill-progress" data-progress="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Networking</span><span>75%</span></div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="75"></div>
             </div>
           </div>
           <div class="skill-item">
@@ -226,9 +303,7 @@
             </div>
           </div>
           <div class="skill-item">
-            <div class="skill-name">
-              <span>Framer Motion</span><span>78%</span>
-            </div>
+            <div class="skill-name"><span>Framer Motion</span><span>78%</span></div>
             <div class="skill-bar">
               <div class="skill-progress" data-progress="78"></div>
             </div>
@@ -274,15 +349,17 @@
     </section>
 
    <!-- Projects Section -->
-<section id="projects">
+    <section id="projects">
   <h2 class="section-title">Featured Projects</h2>
-  <div class="projects-grid">
+  <div class="projects-grid" id="projectsGrid">
 
-    <div class="project-card">
-      <img src="./images/new1.png" alt="Project 8">
+    <div class="project-card project-tilt">
+      <div class="project-image-wrapper">
+        <img src="./images/new1.png" alt="Project 8">
+      </div>
       <div class="project-content">
         <h3 class="project-title">
-          <a href="https://gariwala.netlify.app/" target="_blank">
+          <a href="https://gariwala.netlify.app/" target="_blank" class="magnetic-link">
             GARIWALA - Premium Car Rental Service
           </a>
         </h3>
@@ -290,11 +367,13 @@
       </div>
     </div>
     
-    <div class="project-card">
-      <img src="./images/new2.png" alt="Project 9">
+    <div class="project-card project-tilt">
+      <div class="project-image-wrapper">
+        <img src="./images/new2.png" alt="Project 9">
+      </div>
       <div class="project-content">
         <h3 class="project-title">
-          <a href="https://warmpaws-e19b8.web.app/" target="_blank">
+          <a href="https://warmpaws-e19b8.web.app/" target="_blank" class="magnetic-link">
             WARMPAWS
           </a>
         </h3>
@@ -302,11 +381,13 @@
       </div>
     </div>
 
-    <div class="project-card">
-      <img src="./images/hackathon1.png" alt="Project 1">
+    <div class="project-card project-tilt">
+      <div class="project-image-wrapper">
+        <img src="./images/hackathon1.png" alt="Project 1">
+      </div>
       <div class="project-content">
         <h3 class="project-title">
-          <a href="https://6845b150af2a94000869d2b3--startling-pavlova-74c5c3.netlify.app/" target="_blank">
+          <a href="https://6845b150af2a94000869d2b3--startling-pavlova-74c5c3.netlify.app/" target="_blank" class="magnetic-link">
             HACKATHON - From Chains To Freedom
           </a>
         </h3>
@@ -314,11 +395,13 @@
       </div>
     </div>
 
-    <div class="project-card">
-      <img src="./images/web1.jpeg" alt="Project 2">
+    <div class="project-card project-tilt">
+      <div class="project-image-wrapper">
+        <img src="./images/web1.jpeg" alt="Project 2">
+      </div>
       <div class="project-content">
         <h3 class="project-title">
-          <a href="https://github.com/Taoshif1/E-commerce-website-24" target="_blank">
+          <a href="https://github.com/Taoshif1/E-commerce-website-24" target="_blank" class="magnetic-link">
             E-commerce Website 24
           </a>
         </h3>
@@ -326,11 +409,13 @@
       </div>
     </div>
 
-    <div class="project-card">
-      <img src="./images/game.png" alt="Project 3">
+    <div class="project-card project-tilt">
+      <div class="project-image-wrapper">
+        <img src="./images/game.png" alt="Project 3">
+      </div>
       <div class="project-content">
         <h3 class="project-title">
-          <a href="https://github.com/Taoshif1/java-flappy-bird-game" target="_blank">
+          <a href="https://github.com/Taoshif1/java-flappy-bird-game" target="_blank" class="magnetic-link">
             Flappy Bird Game in Java
           </a>
         </h3>
@@ -338,11 +423,13 @@
       </div>
     </div>
 
-    <div class="project-card">
-      <img src="./images/web2.png" alt="Project 4">
+    <div class="project-card project-tilt">
+      <div class="project-image-wrapper">
+        <img src="./images/web2.png" alt="Project 4">
+      </div>
       <div class="project-content">
         <h3 class="project-title">
-          <a href="https://github.com/Taoshif1/login-system-in-php" target="_blank">
+          <a href="https://github.com/Taoshif1/login-system-in-php" target="_blank" class="magnetic-link">
             Login System in PHP
           </a>
         </h3>
@@ -350,11 +437,13 @@
       </div>
     </div>
 
-    <div class="project-card">
-      <img src="./images/web3.png" alt="Project 5">
+    <div class="project-card project-tilt">
+      <div class="project-image-wrapper">
+        <img src="./images/web3.png" alt="Project 5">
+      </div>
       <div class="project-content">
         <h3 class="project-title">
-          <a href="https://github.com/Taoshif1/Internet-Management-System-in-Java" target="_blank">
+          <a href="https://github.com/Taoshif1/Internet-Management-System-in-Java" target="_blank" class="magnetic-link">
             Internet Management System in Java
           </a>
         </h3>
@@ -362,11 +451,13 @@
       </div>
     </div>
 
-    <div class="project-card">
-      <img src="./images/web4.png" alt="Project 6">
+    <div class="project-card project-tilt">
+      <div class="project-image-wrapper">
+        <img src="./images/web4.png" alt="Project 6">
+      </div>
       <div class="project-content">
         <h3 class="project-title">
-          <a href="https://taoshif1.github.io/AI-Portfolio/" target="_blank">
+          <a href="https://taoshif1.github.io/AI-Portfolio/" target="_blank" class="magnetic-link">
             Previous Portfolio
           </a>
         </h3>
@@ -374,11 +465,13 @@
       </div>
     </div>
 
-    <div class="project-card">
-      <img src="./images/web5.png" alt="Project 7">
+    <div class="project-card project-tilt">
+      <div class="project-image-wrapper">
+        <img src="./images/web5.png" alt="Project 7">
+      </div>
       <div class="project-content">
         <h3 class="project-title">
-          <a href="https://github.com/Taoshif1" target="_blank">
+          <a href="https://github.com/Taoshif1" target="_blank" class="magnetic-link">
             More Projects
           </a>
         </h3>
@@ -433,6 +526,71 @@
       </div>
     </section>
 
-    <script src="/script.js"></script>
+    <!-- Gemini AI Chatbot -->
+    <div id="chat-bubble" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-14 h-14 md:w-16 md:h-16 bg-[#c9a961] rounded-full flex items-center justify-center cursor-pointer shadow-lg z-[999] hover:scale-110 transition-transform active:scale-95">
+      <i class="fas fa-comments text-white text-lg md:text-xl"></i>
+    </div>
+
+    <div id="chat-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] hidden flex items-center justify-center p-4">
+      <div class="chat-window bg-[#1a1a1a] backdrop-blur-md rounded-lg shadow-2xl w-full max-w-md h-[600px] flex flex-col border border-white/10" onclick="event.stopPropagation()">
+        <!-- Chat Header -->
+        <div class="chat-header bg-[#121212] p-4 rounded-t-lg border-b border-white/10 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-[#c9a961] rounded-full flex items-center justify-center">
+              <i class="fas fa-robot text-white"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold">Gazi Taoshif AI</h3>
+              <p class="text-xs text-gray-400">Online</p>
+            </div>
+          </div>
+          <button id="chat-close" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4">
+          <div class="message received flex justify-start">
+            <div class="message-content bg-white/5 backdrop-blur-sm rounded-lg p-3 max-w-[80%] text-gray-300">
+              <p>Hello! I'm Gazi Taoshif's AI assistant. How can I help you today?</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="hidden px-4 pb-2">
+          <div class="flex items-center gap-2">
+            <div class="typing-dot bg-[#c9a961] w-2 h-2 rounded-full"></div>
+            <div class="typing-dot bg-[#c9a961] w-2 h-2 rounded-full"></div>
+            <div class="typing-dot bg-[#c9a961] w-2 h-2 rounded-full"></div>
+          </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input p-4 border-t border-white/10 bg-[#121212]">
+          <form id="chat-form" class="flex gap-2">
+            <input
+              type="text"
+              id="chat-input-field"
+              placeholder="Type your message..."
+              class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-[#c9a961] transition-colors"
+              autocomplete="off"
+            />
+            <button
+              type="submit"
+              class="bg-[#c9a961] text-[#121212] px-6 py-2 rounded-lg font-semibold hover:bg-[#d4b877] transition-colors"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- API Config (will be loaded from config.js) -->
+    <script src="config.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
