@@ -1,6 +1,6 @@
 # Gazi Taoshif — Software Engineering Portfolio
 
-A TypeScript MERN portfolio combining a custom React interface with an Express API, MongoDB-backed project curation and contact storage, live GitHub metadata, and a server-side Gemini assistant.
+A TypeScript MERN portfolio combining a custom React interface with an Express API, GitHub-topic project curation, optional MongoDB presentation overrides and contact storage, and a server-side Gemini assistant.
 
 ## Architecture
 
@@ -67,10 +67,12 @@ npm test
 1. Create an Atlas cluster and database user.
 2. Permit appropriate development and Vercel network access.
 3. Add the connection string as `MONGODB_URI` directly in Vercel Environment Variables.
-4. Add `PortfolioProject` documents to control featured state, ordering, titles, descriptions, roles, imagery, and technology overrides. The local fallback keeps development usable before seeding.
+4. Optionally add `PortfolioProject` documents to control ordering, titles, descriptions, roles, imagery, technology overrides, visibility, and explicit related-repository links. No document is required for a project to appear.
 5. Contact submissions use `ContactMessage`; the API truthfully reports failure if persistence is unavailable.
 
-GitHub stays authoritative for repository URL, description fallback, homepage, language, topics, update time, archive state, and fork state. MongoDB controls presentation. Forks, archived/disabled repositories, and hidden projects are excluded. The optional `portfolio-featured` topic may feature an otherwise unconfigured repository; MongoDB can override it.
+GitHub stays authoritative for selection and repository facts. Add the exact `portfolio-featured` topic to a public repository to make it eligible; remove the topic to remove it after cache refresh. Forks, archived repositories, disabled repositories, and MongoDB-hidden projects are excluded. The server caches results and sends a five-minute shared-cache policy, so topic changes normally appear in about five minutes. If GitHub fails or no eligible repositories exist, the curated local fallback keeps Featured Work populated.
+
+MongoDB is presentation-only: `displayTitle`, `shortDescription`, `role`, `image`, `priority`, `technologyOverrides`, `hidden`, and `relatedRepositories` may be overridden by a matching `repoName`. `relatedRepositories` entries use `{ label, name, url }`; when present, their compact labels replace the single GitHub card link.
 
 ## Gemini setup
 
