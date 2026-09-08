@@ -1,0 +1,2 @@
+export const skillGroups = { Frontend: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS'], Backend: ['Node.js', 'Express', 'REST APIs'], Database: ['MongoDB', 'Mongoose'], Programming: ['Java', 'C / C++', 'Python'], Tools: ['Git', 'GitHub', 'Postman', 'GSAP', 'Three.js'] };
+export const links = { github: 'https://github.com/Taoshif1', linkedin: 'https://www.linkedin.com/in/taoshif1/', email: 'mailto:taoshif2@gmail.com' };

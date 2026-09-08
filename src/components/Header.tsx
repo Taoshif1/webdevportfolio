@@ -1,0 +1,3 @@
+import { useState } from 'react';
+const items = ['about', 'skills', 'projects', 'contact'];
+export function Header() { const [open, setOpen] = useState(false); return <header className="site-header"><a className="logo" href="#home">TAOSHIFLEX</a><button className="menu" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}><span className="sr-only">Toggle navigation</span>☰</button><nav id="navigation" className={open ? 'open' : ''} aria-label="Main navigation">{items.map(item => <a key={item} href={`#${item}`} onClick={() => setOpen(false)}>{item}</a>)}</nav></header> }
