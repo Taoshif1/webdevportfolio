@@ -545,7 +545,7 @@ footer {
 
     .site-header nav {
         display: none;
-        position: fixed;
+        position: absolute;
         z-index: var(--z-nav-panel);
         top: 76px;
         left: 0;
@@ -561,9 +561,12 @@ footer {
     }
 
     .nav-backdrop {
-        position: fixed;
+        position: absolute;
         z-index: var(--z-nav-backdrop);
-        inset: 76px 0 0;
+        top: 76px;
+        right: 0;
+        left: 0;
+        height: calc(100vh - 76px);
         border: 0;
         background: #0009;
         cursor: default
