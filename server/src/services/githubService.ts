@@ -38,7 +38,7 @@ export function normalizeTopicProjects(repos: GitHubRepository[], overrides: Pro
         .filter(({ config }) => !config?.hidden)
         .map(({ repo, config }): NormalizedProject & { priority?: number } => ({
             repoName: repo.name,
-            name: config?.displayTitle || repo.name,
+            name: config?.displayTitle || cleanRepositoryName(repo.name),
             description: config?.shortDescription || repo.description || 'Source code and project details are available on GitHub.',
             ...(config?.role ? { role: config.role } : {}),
             technologies: (config?.technologyOverrides?.length ? config.technologyOverrides : [repo.language, ...repo.topics.filter(topic => !ADMIN_TOPICS.has(topic))])
@@ -58,6 +58,15 @@ export function normalizeTopicProjects(repos: GitHubRepository[], overrides: Pro
             return b.updatedAt.localeCompare(a.updatedAt) || a.repoName.localeCompare(b.repoName);
         })
         .map(({ priority: _priority, ...project }) => project);
+}
+
+function cleanRepositoryName(name: string) {
+    return name
+        .replace(/[-_]+/g, ' ')
+        .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .replace(/\b[a-z]/g, letter => letter.toUpperCase());
 }
 
 export async function getProjects(): Promise<NonNullable<typeof cache>> {

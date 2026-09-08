@@ -16,6 +16,11 @@ test('selects exact portfolio topic and removes it from technology chips', () =>
     assert.deepEqual(projects[0]?.technologies, ['TypeScript', 'react']);
 });
 
+test('uses a clean repository title when no display title is configured', () => {
+    const [project] = normalizeTopicProjects([repo('redFlint-client')], []);
+    assert.equal(project?.name, 'Red Flint Client');
+});
+
 test('excludes forks, archived repositories, and disabled repositories', () => {
     const projects = normalizeTopicProjects([repo('fork', { fork: true }), repo('archived', { archived: true }), repo('disabled', { disabled: true }), repo('valid')], []);
     assert.deepEqual(projects.map(project => project.repoName), ['valid']);

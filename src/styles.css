@@ -282,37 +282,130 @@ footer {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.2rem
 }
 
 .project-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
     border: 1px solid var(--line);
-    background: #111216;
-    overflow: hidden
+    background: linear-gradient(145deg, #14151a, #0f1014);
+    overflow: hidden;
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease
 }
 
-.project-card.project-lead {
-    grid-column: 1/-1;
-    display: grid;
-    grid-template-columns: 1.15fr .85fr
+.project-visual {
+    position: relative;
+    isolation: isolate;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background: #17181d
 }
 
-.project-card img {
+.project-visual img {
     display: block;
     width: 100%;
-    height: 260px;
+    height: 100%;
     object-fit: cover;
-    background: #191a1e
+    transition: transform .6s cubic-bezier(.2, .7, .2, 1), filter .35s ease
 }
 
-.project-lead img {
-    height: 100%;
-    min-height: 410px
+.project-visual-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, #08090c66);
+    transition: background-color .35s ease
+}
+
+.project-visual-fallback {
+    display: grid;
+    place-items: center;
+    background-color: #121319;
+    background-image: linear-gradient(#d5b66f0b 1px, transparent 1px), linear-gradient(90deg, #d5b66f0b 1px, transparent 1px), radial-gradient(circle at 76% 22%, #d5b66f26, transparent 30%), linear-gradient(135deg, #191a20, #0d0e12);
+    background-size: 28px 28px, 28px 28px, auto, auto
+}
+
+.project-visual-fallback::before,
+.project-visual-fallback::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: 1px solid #d5b66f3d;
+    transform: rotate(18deg)
+}
+
+.project-visual-fallback::before {
+    width: 42%;
+    aspect-ratio: 1;
+    right: -8%;
+    top: -30%
+}
+
+.project-visual-fallback::after {
+    width: 20%;
+    aspect-ratio: 1;
+    left: 10%;
+    bottom: -19%;
+    transform: rotate(45deg)
+}
+
+.project-wireframe {
+    position: absolute;
+    inset: 12%;
+    border: 1px solid #ffffff12
+}
+
+.project-wireframe::before,
+.project-wireframe::after {
+    content: '';
+    position: absolute;
+    background: #ffffff12
+}
+
+.project-wireframe::before {
+    width: 1px;
+    height: 140%;
+    left: 72%;
+    top: -20%;
+    transform: rotate(24deg)
+}
+
+.project-wireframe::after {
+    width: 125%;
+    height: 1px;
+    left: -12%;
+    top: 68%;
+    transform: rotate(-8deg)
+}
+
+.project-initials {
+    color: #eee9df;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 5.4rem);
+    line-height: 1;
+    letter-spacing: -.06em;
+    text-shadow: 0 12px 35px #000b
+}
+
+.project-visual-label {
+    position: absolute;
+    right: 1rem;
+    bottom: .85rem;
+    color: var(--gold);
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase
 }
 
 .project-copy {
-    padding: 1.7rem
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.6rem
 }
 
 .project-meta {
@@ -335,6 +428,10 @@ footer {
     line-height: 1.6
 }
 
+.project-card p {
+    margin: 0
+}
+
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -352,6 +449,28 @@ footer {
 .direct-links a {
     color: var(--gold);
     text-underline-offset: 4px
+}
+
+.project-card .card-links {
+    margin-top: auto;
+    padding-top: 1.35rem
+}
+
+@media (hover:hover) {
+    .project-card:hover {
+        border-color: #d5b66f80;
+        box-shadow: 0 18px 45px #0005;
+        transform: translateY(-4px)
+    }
+
+    .project-card:hover .project-visual img {
+        filter: brightness(1.06);
+        transform: scale(1.035)
+    }
+
+    .project-card:hover .project-visual-shade {
+        background-color: #d5b66f0b
+    }
 }
 
 .skeleton {
@@ -595,18 +714,11 @@ footer {
         grid-template-columns: repeat(2, 1fr)
     }
 
+}
+
+@media(max-width:680px) {
     .project-grid {
         grid-template-columns: 1fr
-    }
-
-    .project-card.project-lead {
-        grid-column: auto;
-        display: block
-    }
-
-    .project-lead img {
-        min-height: 0;
-        height: 260px
     }
 }
 
