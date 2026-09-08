@@ -7,7 +7,13 @@
     font-synthesis: none;
     --gold: #d5b66f;
     --line: #2a2b2f;
-    --muted: #aaa69e
+    --muted: #aaa69e;
+    --z-content: 1;
+    --z-header: 20;
+    --z-nav-backdrop: 21;
+    --z-nav-panel: 22;
+    --z-chat-trigger: 30;
+    --z-chat-dialog: 40
 }
 
 * {
@@ -57,7 +63,7 @@ textarea {
 
 .site-header {
     position: fixed;
-    z-index: 20;
+    z-index: var(--z-header);
     top: 0;
     left: 0;
     right: 0;
@@ -105,10 +111,9 @@ textarea {
 
 .hero,
 main,
-.site-header,
 footer {
     position: relative;
-    z-index: 1
+    z-index: var(--z-content)
 }
 
 .hero {
@@ -412,7 +417,7 @@ footer {
 
 .chat-trigger {
     position: fixed;
-    z-index: 30;
+    z-index: var(--z-chat-trigger);
     right: 1.5rem;
     bottom: 1.5rem;
     border: 0;
@@ -427,7 +432,7 @@ footer {
 
 .chat-overlay {
     position: fixed;
-    z-index: 40;
+    z-index: var(--z-chat-dialog);
     inset: 0;
     background: #0009;
     display: grid;
@@ -540,17 +545,28 @@ footer {
 
     .site-header nav {
         display: none;
-        position: absolute;
+        position: fixed;
+        z-index: var(--z-nav-panel);
         top: 76px;
         left: 0;
         right: 0;
         padding: 1.5rem;
         background: #101115;
-        flex-direction: column
+        flex-direction: column;
+        box-shadow: 0 18px 45px #000a
     }
 
     .site-header nav.open {
         display: flex
+    }
+
+    .nav-backdrop {
+        position: fixed;
+        z-index: var(--z-nav-backdrop);
+        inset: 76px 0 0;
+        border: 0;
+        background: #0009;
+        cursor: default
     }
 
     .hero {
