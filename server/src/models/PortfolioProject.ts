@@ -1,0 +1,4 @@
+﻿import mongoose, { type Model } from 'mongoose'; const { Schema, model, models } = mongoose;
+interface Doc{repoName:string;featured:boolean;displayTitle?:string;shortDescription?:string;role?:string;image?:string;priority:number;technologyOverrides?:string[];hidden:boolean}
+const schema=new Schema<Doc>({repoName:{type:String,required:true,unique:true,trim:true},featured:{type:Boolean,default:false},displayTitle:{type:String,trim:true,maxlength:100},shortDescription:{type:String,trim:true,maxlength:300},role:{type:String,trim:true,maxlength:100},image:{type:String,trim:true},priority:{type:Number,default:100},technologyOverrides:[{type:String,trim:true}],hidden:{type:Boolean,default:false}},{timestamps:true});
+export const PortfolioProject=(models.PortfolioProject as Model<Doc>)??model<Doc>('PortfolioProject',schema);

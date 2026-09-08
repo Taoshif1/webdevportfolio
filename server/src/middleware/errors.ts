@@ -1,0 +1,4 @@
+import type { ErrorRequestHandler, RequestHandler } from 'express'; import { ZodError } from 'zod';
+export class HttpError extends Error { constructor(public status: number, message: string) { super(message) } }
+export const notFound: RequestHandler = (_req, _res, next) => next(new HttpError(404, 'Route not found.'));
+export const errorHandler: ErrorRequestHandler = (error, _req, res, _next) => { if (error instanceof ZodError) { res.status(400).json({ error: 'Please check the submitted fields.', details: error.issues.map(i => ({ field: i.path.join('.'), message: i.message })) }); return } const status = error instanceof HttpError ? error.status : 500; const message = error instanceof HttpError ? error.message : 'An unexpected server error occurred.'; if (process.env.NODE_ENV !== 'production' && status === 500) console.error(error instanceof Error ? error.message : 'Unknown error'); res.status(status).json({ error: message }) };
