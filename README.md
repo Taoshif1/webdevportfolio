@@ -48,7 +48,7 @@ The web app is at `http://localhost:5173`; the API is at `http://localhost:3001`
 
 ## Environment
 
-Required server-side variables are `MONGODB_URI` and `GEMINI_API_KEY`. `GITHUB_TOKEN` is optional. Runtime configuration uses `CLIENT_ORIGIN`, `NODE_ENV`, and `PORT`.
+Required server-side variables are `MONGODB_URI` and `GEMINI_API_KEY`. `GITHUB_TOKEN` and `GEMINI_MODEL` are optional; the model defaults to `gemini-3.5-flash-lite`. Runtime configuration uses `CLIENT_ORIGIN`, `NODE_ENV`, and `PORT`.
 
 Configure production values directly in the Vercel project's Environment Variables settings. Do not expose server secrets through browser-prefixed variables or commit local environment files. For local development, provide variables through the shell or another untracked mechanism only when needed; the portfolio and project fallbacks remain usable without secrets.
 
